@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  custom-nginx:
+    container_name: custom-nginx
+    image: nginx:latest
+    volumes:
+      # - ../../network/server/public:/usr/share/nginx/backend:ro
+      # - ../../network/client/assets:/usr/share/nginx/frontend:ro
+      # - ../../network/nginx/local.conf:/etc/nginx/nginx.conf:ro
+      - ./logs:/etc/nginx/logs:rw
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../../../site/current/dist/public:/usr/share/nginx/html:ro
+      - ../../../site/current/dist/nginx/siteperso.conf:/etc/nginx/conf.d/siteperso.conf
+      - ../../../site/current/dist/letsencrypt:/etc/letsencrypt:ro # TODO: once certbot ready, do it here
+      - ../../../site/current/dist/nginx/certs:/etc/nginx/certs:ro # TODO: once certbot ready, do it here
+    ports:
+      - 80:80
+      - 443:443
+    # healthcheck:
+    #   test: curl -f http://network-backend:1337 || exit 1
+    #   interval: 10s
+    #   timeout: 10s
+    #   retries: 5
+    #   start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: '1500M'
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+    networks:
+      # - calibreo
+      - anthony
+
+  custom-certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+
+networks:
+  # calibreo:
+  #   external: true
+  anthony:
+    external: true
