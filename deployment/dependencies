@@ -1,1 +1,20 @@
 #!/bin/bash
+
+HERE=`pwd`
+
+mkdir -p ../../conf.d
+ln -s ../../conf.d $HERE
+
+mkdir -p ../../logs
+ln -s ../../logs $HERE
+
+mkdir -p ../../../site/current/public/
+ln -s ../../../site/current/public/ public-siteperso
+
+mkdir -p ../../../network/current/server/public/
+ln -s ../../../network/current/server/public/ public-network-backend
+
+mkdir -p ../../../network/current/client/assets/
+ln -s ../../../network/current/client/assets/ public-network-frontend
+
+echo "Symbolic links for conf.d, logs and public folders ready"

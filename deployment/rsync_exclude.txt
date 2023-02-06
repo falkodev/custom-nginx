@@ -4,16 +4,6 @@
 # sqlite databases or static web content you may need
 data
 temp
-locales
-/scripts
-/public
-/config
-/lib
-/backup/uploads
-/backup/db/10-01-18/
-/nginx
-/letsencrypt
-/robots.txt
 tmp
 local.example.js
 npm-debug.log
