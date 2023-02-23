@@ -31,8 +31,7 @@ services:
           cpus: '0.5'
           memory: '1500M'
       restart_policy:
-        condition: on-failure
-        max_attempts: 3
+        condition: always
     networks:
       - calibreo
       - anthony
