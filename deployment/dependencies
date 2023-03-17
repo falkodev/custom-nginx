@@ -5,6 +5,9 @@ HERE=`pwd`
 mkdir -p ../../conf.d
 ln -s ../../conf.d $HERE
 
+mkdir -p ../../certbot
+ln -s ../../certbot $HERE
+
 mkdir -p ../../logs
 ln -s ../../logs $HERE
 
