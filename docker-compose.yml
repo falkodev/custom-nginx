@@ -12,6 +12,8 @@ services:
       - ./certbot/conf/:/etc/letsencrypt/:ro
       # tarlao.fr
       - ./public-siteperso:/usr/share/nginx/html:ro
+      # aurelie.tarlao.fr
+      - ./public-wordpress:/var/www/html
       # calibreo.it
       - ./public-network-backend:/usr/share/nginx/backend:ro
       - ./public-network-frontend:/usr/share/nginx/frontend:ro
@@ -35,6 +37,7 @@ services:
     networks:
       - calibreo
       - anthony
+      - aurelie
 
   custom-certbot:
     image: certbot/certbot:latest
@@ -47,4 +50,6 @@ networks:
   calibreo:
     external: true
   anthony:
+    external: true
+  aurelie:
     external: true

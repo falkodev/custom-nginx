@@ -14,6 +14,9 @@ ln -s ../../logs $HERE
 mkdir -p ../../../site/current/public/
 ln -s ../../../site/current/public/ public-siteperso
 
+mkdir -p ../../../docker-wordpress/current/wordpress-web/
+ln -s ../../../docker-wordpress/current/wordpress-web/ public-wordpress
+
 mkdir -p ../../../network/current/server/public/
 ln -s ../../../network/current/server/public/ public-network-backend
 
