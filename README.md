@@ -12,5 +12,4 @@ from scratch
 - remettre les confs 443 et relancer nginx
 
 empty logs:
-- docker exec -it custom-nginx bash
-- truncate --size 0 /etc/nginx/logs/access.log
+- docker exec -it custom-nginx bash -c 'truncate --size 0 /etc/nginx/logs/access.log && truncate --size 0 /etc/nginx/logs/error.log'
