@@ -23,4 +23,10 @@ ln -s ../../../network/current/server/public/ public-network-backend
 mkdir -p ../../../network/current/client/assets/
 ln -s ../../../network/current/client/assets/ public-network-frontend
 
+mkdir -p ../../../staging-network/current/server/public/
+ln -s ../../../staging-network/current/server/public/ staging-network-backend
+
+mkdir -p ../../../staging-network/current/client/assets/
+ln -s ../../../staging-network/current/client/assets/ staging-network-frontend
+
 echo "Symbolic links for conf.d, logs and public folders ready"

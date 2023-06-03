@@ -1,6 +1,6 @@
 docker-compose run --rm  custom-certbot certonly --webroot --webroot-path /var/www/certbot/ --agree-tos --renew-by-default -d tarlao.fr -d www.tarlao.fr -d anthony.tarlao.fr -d aurelie.tarlao.fr -m anthony.tarlao@gmail.com
 
-docker-compose run --rm  custom-certbot certonly --webroot --webroot-path /var/www/certbot/ --agree-tos --renew-by-default -d calibreo.it -d www.calibreo.it -d api.calibreo.it -d ws.calibreo.it -m anthony.tarlao@gmail.com
+docker-compose run --rm  custom-certbot certonly --webroot --webroot-path /var/www/certbot/ --agree-tos --renew-by-default -d calibreo.it -d www.calibreo.it -d api.calibreo.it -d ws.calibreo.it -d staging.calibreo.it -d stagingapi.calibreo.it -d stagingws.calibreo.it -m anthony.tarlao@gmail.com
 
 docker-compose run --rm custom-certbot renew
 
