@@ -13,3 +13,8 @@ from scratch
 
 empty logs:
 - docker exec -it custom-nginx bash -c 'truncate --size 0 /etc/nginx/logs/access.log && truncate --size 0 /etc/nginx/logs/error.log'
+
+visualize logs:
+- `sc-shell production`
+- `cat logs/error.log`
+- `cat logs/access.log`
